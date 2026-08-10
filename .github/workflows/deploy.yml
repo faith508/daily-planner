@@ -23,15 +23,16 @@ jobs:
           
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
-        working-directory: .
+        working-directory: ./daily-planner
         env:
           NODE_ENV: development
           
       - name: Build
         run: pnpm run build
+        working-directory: ./daily-planner
         
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./daily-planner/dist
