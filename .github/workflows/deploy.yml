@@ -22,7 +22,8 @@ jobs:
           version: 8
           
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile --prod=false
+        run: pnpm install --no-frozen-lockfile
+        working-directory: ./daily planner
         env:
           NODE_ENV: development
           
