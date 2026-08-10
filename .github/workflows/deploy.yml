@@ -14,7 +14,7 @@ jobs:
         with:
           version: 8
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile --include=dev
+        run: pnpm install --include=dev
         working-directory: .
         env:
           NODE_ENV: development
