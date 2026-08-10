@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Daily Planner"
+description = "A responsive daily planning website that helps people organize tasks, block time, track priorities, and capture notes in a focused day view."
+version = "1.0.0"
+id = "artifacts/daily-planner"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21760
+
+[services.development]
+run = "pnpm --filter @workspace/daily-planner run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/daily-planner", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/daily-planner/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21760"
+BASE_PATH = "/"
