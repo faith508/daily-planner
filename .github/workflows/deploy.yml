@@ -22,7 +22,7 @@ jobs:
           version: 8
           
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile --prod=false
         
       - name: Build
         run: pnpm run build
