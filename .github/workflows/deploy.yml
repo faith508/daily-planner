@@ -23,7 +23,7 @@ jobs:
           
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
-        working-directory: ./daily planner
+        working-directory: .
         env:
           NODE_ENV: development
           
